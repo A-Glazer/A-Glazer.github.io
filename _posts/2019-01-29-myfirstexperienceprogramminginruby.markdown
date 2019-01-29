@@ -1,7 +1,7 @@
 ---
 layout: post
-title:      "MyFirstExperienceProgramminginRuby"
-date:       2019-01-29 19:40:08 +0000
+title:      "My First Experience Programming in Ruby"
+date:       2019-01-29 14:40:09 -0500
 permalink:  myfirstexperienceprogramminginruby
 ---
 
