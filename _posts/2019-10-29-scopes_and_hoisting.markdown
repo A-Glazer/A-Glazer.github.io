@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Scopes and Hoisting"
-date:       2019-10-29 15:27:32 +0000
+date:       2019-10-29 11:27:32 -0400
 permalink:  scopes_and_hoisting
 ---
 
@@ -81,7 +81,8 @@ In summary,  scoping allows the application to have access to variables specific
 ## Hoisting
 
 **What is Hoisting?**
-According to the Merriam-Webster dictionary, hoist is a verb that means to “to lift or raise”. In JavaScript, hoisting does exactly that. It raises a variable to the top of the scope, before the code is executed. 
+According to the Merriam-Webster dictionary, hoist is a verb that means to “to lift or raise”. In JavaScript, hoisting does exactly that. It raises a variable or function to the top of the scope, before the code is executed. 
+
 
 **Why is hoisting important?**
 In order to call a variable, it needs to be defined first. If you only define it afterwards, it will return as `undefined`. For example:
@@ -101,7 +102,7 @@ console.log(testVar)
 
 ```
 
-This can potentially cause a lot of bugs in your code since you may think you’ve declared the variable properly, but it returns `undefined` because of its location. 
+This can potentially cause a lot of bugs in your code since you may think you’ve declared the variable properly, but it returns `undefined` because of its location. You may be wondering why it returns `undefined` as opposed to  the assignment. The reason is hoisting only hoists the declaration, not the assignment. It is as if the program took the variable or function declaration and hoisted it to the top of the scope and assigned it to `undefined`.Then as the code runs through, it assigns the variable once it reaches the original assignment location. Therefore, if the variable is called before it reached the assignment location, it will return `underfined`.  
 
 **How to avoid errors with hoisting**
 
@@ -111,7 +112,8 @@ Another way to avoid issues is by using `const` and `let`. Why? JavaScript doesn
 
 **What about a function?**
 
-A function does not need to be defined before it is declared. For example:
+Unlike variables, functions get hoisted - both the definition and assignment. Therefore, if you call on a function before it was assigned, the code will read it as if it was both defined and assigned at the top of the scope. For example:
+
 ```
 testFunct()
 
